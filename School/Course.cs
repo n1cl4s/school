@@ -2,7 +2,7 @@ class Course
 {
 public string courseName;
 public int MaxSeats;
-public List<Student> students;
+public List<Student> students; = new List<Student>();
 
 public Course(string name, int seats)
     {
@@ -12,15 +12,28 @@ public Course(string name, int seats)
     }
 public void Enroll (Student student)
     {
+    if(students.Contains(student))
+    {
+        System.Console.WriteLine("Denna student finns redan tillagd i kursen");
+    }
+
+    else
+    {
+        // Kollar om kursen är full
     if (students.Count >= MaxSeats)
         {
+            // Kursen är full
             System.Console.WriteLine("Kursen är full");
         }
-        else
+        else       
         {
+            // Annars lägg till i listan för studenten(kursen) och för kursen(stundenten)
             students.Add(student);
         }
+
+        }
     }
+
 
 public void Remove (Student student)
 
@@ -33,7 +46,7 @@ public void RollCall()
         
     }
 
-public void override string ToString()
+public override string ToString()
     {
         
     }
