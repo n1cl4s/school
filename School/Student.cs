@@ -38,4 +38,12 @@ public void Leave(Course course)
             currentCourses.Remove(course);
         }
     }
+
+    public void Schedule()
+    {
+        foreach (Course course in currentCourses)
+        {
+            System.Console.WriteLine(course.courseName);
+        }
+    }
 }
