@@ -24,6 +24,7 @@ public void Join(Course course)
         else
         {
             currentCourses.Add(course);
+            course.AddStudent(this);
         }
         }
 }
@@ -31,11 +32,12 @@ public void Leave(Course course)
     {
         if (!currentCourses.Contains(course))
         {
-            System.Console.WriteLine("Du är inte med i kursen");
+            System.Console.WriteLine($"{studentName} är inte med i kursen");
         }
         else
         {
             currentCourses.Remove(course);
+            course.Remove(this);
         }
     }
 
@@ -43,13 +45,18 @@ public void Leave(Course course)
     {
         foreach (Course course in currentCourses)
         {
-            System.Console.WriteLine(course.courseName);
+            System.Console.WriteLine($"Schema för {studentName}: {course.courseName}");
         }
     }
 
     public override string ToString()
     {
         return studentName;
+    }
+
+    public void AddCourse (Course course)
+    {
+        currentCourses.Add(course);
     }
 
 }
