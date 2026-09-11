@@ -2,7 +2,7 @@ class Course
 {
 public string courseName;
 public int MaxSeats;
-public List<Student> students; = new List<Student>();
+public List<Student> students = new List<Student>();
 
 public Course(string name, int seats)
     {
@@ -36,10 +36,16 @@ public void Enroll (Student student)
 
 
 public void Remove (Student student)
-
+{
+    if(!students.Contains(student))
     {
-        
+    System.Console.WriteLine("Studenten är inte inlaggd i denna kursen");
     }
+    else
+    {
+        students.Remove(student);
+    }
+}
 
 public void RollCall()
     {
