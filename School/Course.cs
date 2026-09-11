@@ -49,7 +49,10 @@ public void Remove (Student student)
 
 public void RollCall()
     {
-        
+        foreach (Student student in students)
+        {
+            System.Console.WriteLine(student.studentName);
+        }
     }
 
 public override string ToString()
