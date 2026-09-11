@@ -75,4 +75,9 @@ public void RemoveStudent (Student student)
 
         students.Remove(student);
     }
+public void AddStudent (Student student)
+    {
+
+        students.Add(student);
+    }
 }
