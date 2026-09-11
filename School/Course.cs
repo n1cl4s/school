@@ -57,7 +57,7 @@ public void RollCall()
 
 public override string ToString()
     {
-        
+        return courseName + " (" + students.Count + "/" + MaxSeats + " platser)";
     }
 
 }
