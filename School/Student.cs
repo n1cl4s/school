@@ -15,12 +15,8 @@ public void Join(Course course)
         System.Console.WriteLine($"{studentName} går redan denna kurs");
     }
     else
-        {
+    {
             
-        
-        {
-            currentCourses.Add(course); 
-        }
         if (course.students.Count >= course.MaxSeats)
         {
            System.Console.WriteLine("Kursen är tyvärr full!"); 
@@ -31,4 +27,15 @@ public void Join(Course course)
         }
         }
 }
+public void Leave(Course course)
+    {
+        if (!currentCourses.Contains(course))
+        {
+            System.Console.WriteLine("Du är inte med i kursen");
+        }
+        else
+        {
+            currentCourses.Remove(course);
+        }
+    }
 }
