@@ -46,4 +46,10 @@ public void Leave(Course course)
             System.Console.WriteLine(course.courseName);
         }
     }
+
+    public override string ToString()
+    {
+        return studentName;
+    }
+
 }
