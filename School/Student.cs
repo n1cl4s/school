@@ -12,14 +12,14 @@ public void Join(Course course)
 {
   if (currentCourses.Contains(course))
     {
-        System.Console.WriteLine($"{studentName} går redan denna kurs");
+        System.Console.WriteLine($"\n{studentName} går redan denna kurs");
     }
     else
     {
             
         if (course.students.Count >= course.MaxSeats)
         {
-           System.Console.WriteLine("Kursen är tyvärr full!"); 
+           System.Console.WriteLine("\nKursen är tyvärr full!"); 
         }
         else
         {
@@ -32,7 +32,7 @@ public void Leave(Course course)
     {
         if (!currentCourses.Contains(course))
         {
-            System.Console.WriteLine($"{studentName} är inte med i kursen");
+            System.Console.WriteLine($"\n{studentName} är inte med i kursen och kan därför inte tas bort\n");
         }
         else
         {
@@ -43,10 +43,12 @@ public void Leave(Course course)
 
     public void Schedule()
     {
+        System.Console.WriteLine($"\nSchema för {studentName}");
         foreach (Course course in currentCourses)
         {
-            System.Console.WriteLine($"Schema för {studentName}: {course.courseName}");
+        System.Console.WriteLine($"- {course.courseName}");
         }
+        System.Console.WriteLine("");
     }
 
     public override string ToString()
